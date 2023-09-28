@@ -37,14 +37,14 @@ $ npm run dev # 노드 서버와 vite 개발 서버를 동시에 실행합니다
 ### 1부
 
 - 2장. 단위 테스트란?
-  - 강의: `unit-test-example`
-  - 정답: `unit-test-example-with-answer`
+  - 강의: [`unit-test-example`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/unit-test-example)
+  - 정답: [`unit-test-example-with-answer`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/unit-test-example-with-answer)
 - 3장. 단위 테스트 작성하기
-  - 강의: `shopping-mall-unit-test`
-  - 정답: `shopping-mall-unit-test-with-answer`
+  - 강의: [`shopping-mall-unit-test`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/shopping-mall-unit-test)
+  - 정답: [`shopping-mall-unit-test-with-answer`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/shopping-mall-unit-test-with-answer)
 - 4장. 통합 테스트란? / 5장. 통합 테스트 작성하기
-  - 강의: `shopping-mall-integration-test`
-  - 정답: `shopping-mall-integration-test-with-answer`
+  - 강의: [`shopping-mall-integration-test`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/shopping-mall-integration-test)
+  - 정답: [`shopping-mall-integration-test-with-answer`](shopping-mall-integration-test-with-answer)
 
 ### 2부
 
