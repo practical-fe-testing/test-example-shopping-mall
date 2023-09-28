@@ -1,0 +1,76 @@
+{
+  "root": true,
+  "plugins": ["react", "react-hooks", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/warnings"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ignorePatterns": ["node_modules/*", "dist"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "react/prop-types": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling"], "index"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "globals": {
+    "Set": true,
+    "Map": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/utils/test/**.js",
+        "src/**/*.spec.js",
+        "src/**/*.spec.jsx"
+      ],
+      "plugins": ["vitest"],
+      "rules": {
+        "vitest/no-large-snapshots": "error",
+        "vitest/no-identical-title": "off",
+        "vitest/expect-expect": "off"
+      },
+      "extends": ["plugin:vitest/recommended"],
+      "globals": {
+        "globalThis": true,
+        "describe": true,
+        "it": true,
+        "test": true,
+        "expect": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "beforeAll": true,
+        "afterAll": true,
+        "vi": true
+      }
+    }
+  ]
+}
