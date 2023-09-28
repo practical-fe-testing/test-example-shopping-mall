@@ -6,7 +6,7 @@ import CategoryRadioGroup from '@/pages/home/components/CategoryRadioGroup';
 import PriceRange from '@/pages/home/components/PriceRange';
 import SearchBar from '@/pages/home/components/SearchBar';
 import { useFilterStore } from '@/store/filter';
-import { debounce, pick } from '@/utils/common';
+import { pick } from '@/utils/common';
 
 const ProductFilterBox = ({ children }) => (
   <Box sx={{ padding: '10px 0' }}>{children}</Box>
@@ -24,15 +24,16 @@ const ProductFilter = () => {
         'setCategoryId',
       ),
     );
-  const handleChangeInput = debounce(ev => {
+
+  const handleChangeInput = ev => {
     setTitle(ev.target.value);
-  }, 300);
-  const handleMinPrice = debounce(ev => {
+  };
+  const handleMinPrice = ev => {
     setMinPrice(ev.target.value);
-  }, 300);
-  const handleMaxPrice = debounce(ev => {
+  };
+  const handleMaxPrice = ev => {
     setMaxPrice(ev.target.value);
-  }, 300);
+  };
   const handleChangeCategory = ev => {
     setCategoryId(ev.target.value);
   };

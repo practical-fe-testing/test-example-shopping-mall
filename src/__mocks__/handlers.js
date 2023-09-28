@@ -7,7 +7,6 @@ const API_DOMAIN = 'http://localhost:3000';
 
 export const handlers = [
   ...[
-    apiRoutes.profile,
     apiRoutes.users,
     apiRoutes.product,
     apiRoutes.categories,
@@ -29,6 +28,9 @@ export const handlers = [
       ctx.status(200),
       ctx.json({ products, lastPage: products.length < limit }),
     );
+  }),
+  rest.get(`${API_DOMAIN}${apiRoutes.profile}`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(null));
   }),
   rest.post(`${API_DOMAIN}${apiRoutes.users}`, (req, res, ctx) => {
     if (req.body.name === 'FAIL') {
