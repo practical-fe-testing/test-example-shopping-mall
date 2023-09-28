@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 
 import useConfirmModal from './useConfirmModal';
-
 it('호출 시 initialValue 인자를 지정하지 않는 경우 isModalOpened 상태가 false로 설정된다.', () => {
   const { result } = renderHook(useConfirmModal);
 
