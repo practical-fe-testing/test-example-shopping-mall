@@ -76,7 +76,7 @@ const NavigationBar = () => {
       </Box>
       <ConfirmModal
         title="로그아웃 확인"
-        description="로그아웃 하시겠습니까?"
+        description="로그아웃 하시겠습니까?!"
         handleClickDisagree={toggleIsModalOpened}
         handleClickAgree={handleClickModalAgree}
         isModalOpened={isModalOpened}
