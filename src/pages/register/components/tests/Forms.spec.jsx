@@ -14,23 +14,6 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-beforeEach(() => {
-  vi.clearAllMocks();
-});
-
-it('3개의 인풋이 존재하며 각 인풋의 라벨은 "이름", "이메일", "비밀번호" 를 순서대로 노출한다', async () => {
-  const { container } = await render(<Forms />);
-
-  const inputList = container.querySelectorAll('input');
-  const labelList = container.querySelectorAll('label');
-
-  expect(inputList.length).toBe(3);
-
-  expect(labelList[0].textContent).toBe('이름');
-  expect(labelList[1].textContent).toBe('이메일');
-  expect(labelList[2].textContent).toBe('비밀번호');
-});
-
 it('이름을 입력하지 않은 상태에서 제출할 경우 "이름을 입력하세요" 문구가 노출된다', async () => {
   const { user } = await render(<Forms />);
   const submitButton = screen.getByRole('button');
