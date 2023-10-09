@@ -19,10 +19,6 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-beforeEach(() => {
-  vi.clearAllMocks();
-});
-
 it('장바구니, 구매 버튼 및 수량 입력 텍트트가 노출된다', async () => {
   await render(<PurchaseSelection product={product} />);
 
