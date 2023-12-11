@@ -22,21 +22,25 @@ const ItemList = () => {
       <Typography variant="h5" mb={1}>
         구매 물품
       </Typography>
-      <TableContainer component={Paper}>
-        <Table size="small">
-          <TableBody>
-            {Object.values(cart).map(({ id, title, count, price }) => (
-              <TableRow key={id}>
-                <TableCell>{title}</TableCell>
-                <TableCell>{count}개</TableCell>
-                <TableCell>{formatPrice(price * count)}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <ItemTable cart={cart} />
     </Box>
   );
 };
+
+export const ItemTable = ({ cart }) => (
+  <TableContainer component={Paper}>
+    <Table size="small">
+      <TableBody>
+        {Object.values(cart).map(({ id, title, count, price }) => (
+          <TableRow key={id}>
+            <TableCell>{title}</TableCell>
+            <TableCell>{count}개</TableCell>
+            <TableCell>{formatPrice(price * count)}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </TableContainer>
+);
 
 export default ItemList;

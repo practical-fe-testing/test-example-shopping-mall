@@ -11,7 +11,10 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "eslint": "eslint 'src/**/*.js' 'src/**/*.jsx'"
+    "eslint": "eslint 'src/**/*.js' 'src/**/*.jsx'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=토큰입력"
   },
   "dependencies": {
     "@mui/icons-material": "^5.11.9",
@@ -38,6 +41,7 @@
     "zustand": "^4.3.5"
   },
   "devDependencies": {
+    "chromatic": "^9.1.0",
     "@storybook/addon-actions": "^7.0.27",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",

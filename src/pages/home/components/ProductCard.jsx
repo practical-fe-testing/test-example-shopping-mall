@@ -32,10 +32,10 @@ const ProductCard = ({
     navigate(pathToUrl(pageRoutes.productDetail, { productId: id }));
   };
   const handleClickAddCartButton = ev => {
-    onClickAddCartButton(ev, product);
+    onClickAddCartButton?.(ev, product);
   };
   const handleClickPurchaseButton = ev => {
-    onClickPurchaseButton(ev, product);
+    onClickPurchaseButton?.(ev, product);
   };
 
   return (
