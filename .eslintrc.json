@@ -7,6 +7,7 @@
     "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
     "plugin:prettier/recommended",
+    "plugin:cypress/recommended",
     "plugin:import/warnings"
   ],
   "env": {
@@ -68,6 +69,17 @@
         "beforeAll": true,
         "afterAll": true,
         "vi": true
+      }
+    },
+    {
+      "files": ["cypress/e2e/**/*.cy.js"],
+      "plugins": ["cypress"],
+      "extends": ["plugin:cypress/recommended"],
+      "env": {
+        "cypress/globals": true
+      },
+      "globals": {
+        "cy": true
       }
     }
   ]

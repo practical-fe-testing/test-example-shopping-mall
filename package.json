@@ -14,7 +14,11 @@
     "eslint": "eslint 'src/**/*.js' 'src/**/*.jsx'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=토큰입력"
+    "chromatic": "npx chromatic --project-token=토큰입력",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:5173 cypress:open",
+    "e2e:ci": "start-server-and-test dev http://localhost:5173 cypress:run"
   },
   "dependencies": {
     "@mui/icons-material": "^5.11.9",
@@ -60,9 +64,12 @@
     "@vitejs/plugin-react": "^4.0.3",
     "@vitest/ui": "^0.33.0",
     "concurrently": "8.2.0",
+    "cypress": "^12.17.1",
+    "cypress-real-events": "^1.11.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -73,6 +80,7 @@
     "msw-storybook-addon": "^1.8.0",
     "prettier": "^3.0.0",
     "prop-types": "^15.8.1",
+    "start-server-and-test": "^2.0.0",
     "storybook": "^7.0.27",
     "storybook-addon-react-router-v6": "1.0.2",
     "vite": "^4.4.4",
