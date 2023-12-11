@@ -11,7 +11,19 @@ describe('pick util 단위테스트', () => {
     expect(pick(obj, 'a')).toEqual({ a: 'A' });
   });
 
-  it('단일 인자로 전달된 키의 값을 객체에 담아 반환한다(snapshots)', () => {});
+  it('단일 인자로 전달된 키의 값을 객체에 담아 반환한다(snapshots)', () => {
+    const obj = {
+      a: 'A',
+      b: { c: 'C' },
+      d: null,
+    };
+
+    expect(pick(obj, 'a')).toMatchInlineSnapshot(`
+      {
+        "a": "A",
+      }
+    `);
+  });
 
   it('2개 이상의 인자로 전달된 키의 값을 객체에 담아 반환한다', () => {
     const obj = {
