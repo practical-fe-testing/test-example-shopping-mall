@@ -11,6 +11,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/utils/test/setupTests.js',
+    include: ['**/PageTitle.spec.jsx', '**/common.spec.js'],
   },
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
