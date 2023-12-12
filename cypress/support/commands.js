@@ -10,6 +10,8 @@ Cypress.Commands.add('login', () => {
     cy.findByLabelText('이메일').type(username);
     cy.findByLabelText('비밀번호').type(password);
     cy.findByLabelText('로그인').click();
+
+    cy.location('pathname').should('eq', '/');
   });
 
   // 로그인 이후 메인 홈페이지로 이동
