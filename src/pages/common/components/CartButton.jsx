@@ -12,7 +12,12 @@ const CartButton = ({ cart }) => {
   };
 
   return (
-    <IconButton size="large" color="inherit" onClick={handleClickCart}>
+    <IconButton
+      data-testid="cart-button"
+      size="large"
+      color="inherit"
+      onClick={handleClickCart}
+    >
       <Badge badgeContent={Object.keys(cart).length || null} color="error">
         <ShoppingCart data-testid="cart-icon" />
       </Badge>

@@ -24,18 +24,13 @@ it('잘못된 양식의 이메일을 입력한 뒤 로그인 버튼을 클릭할
 it('회원 가입 클릭 시 회원 가입 페이지로 이동한다', () => {
   cy.findByText('회원가입').click();
 
-  cy.url().should('eq', `${Cypress.env('baseUrl')}/register`);
+  cy.assertUrl('/register');
 });
 
 it('성공적으로 로그인 되었을 경우 메인 홈 페이지로 이동하며, 사용자 이름 "Maria"와 장바구니 아이콘이 노출된다', () => {
-  const username = 'maria@mail.com';
-  const password = '12345';
+  cy.login();
 
-  cy.findByLabelText('이메일').type(username);
-  cy.findByLabelText('비밀번호').type(password);
-  cy.findByLabelText('로그인').click();
-
-  cy.url().should('eq', `${Cypress.env('baseUrl')}/`);
+  cy.assertUrl('/');
   cy.findByText('Maria').should('exist');
   cy.findByTestId('cart-icon').should('exist');
 });
