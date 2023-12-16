@@ -2,7 +2,7 @@
 
 
 ## 강의 정보
-* <a target="_blank" rel="noopener noreferrer nofollow" href="https://inf.run/ba6qp">1부</a>
+* 1부: https://inf.run/ba6qp
 * 2부(12월 중 출시 예정)
 
 이 프로젝트는 "실무에 바로 적용하는 프런트엔드 테스트"에서 사용되는 예제입니다.
