@@ -73,7 +73,7 @@ it('포커스가 활성화되면 border 스타일이 추가된다.', async () =>
   await user.click(textInput);
 
   expect(textInput).toHaveStyle({
-    borderWidth: 2,
+    borderWidth: '2px',
     borderColor: 'rgb(25, 118, 210)',
   });
 });
