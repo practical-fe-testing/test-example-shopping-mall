@@ -1,3 +1,7 @@
+# 스터디 내용을 정리한 개인 노션
+https://summer-celery-d26.notion.site/b3e1c7080a554d5f98ff8d49c889968e?pvs=4
+
+<hr />
 # 실무에 바로 적용하는 프런트엔드 테스트 쇼핑몰 예제
 
 <!-- TODO: need to update link -->
