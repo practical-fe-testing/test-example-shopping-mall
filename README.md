@@ -58,3 +58,8 @@ $ npm run dev # 노드 서버와 vite 개발 서버를 동시에 실행합니다
 - 5장. Cypress를 활용한 E2E 테스트 작성하기
   - 강의: [`shopping-mall-e2e-test`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/shopping-mall-e2e-test)
   - 정답: [`shopping-mall-e2e-test-with-answer`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/shopping-mall-e2e-test-with-answer)
+
+
+### 업데이트
+
+- msw 2.0 적용([`msw-2.0`](https://github.com/practical-fe-testing/test-example-shopping-mall/tree/msw-2.0))
