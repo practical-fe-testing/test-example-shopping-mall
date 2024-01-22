@@ -1,4 +1,4 @@
-import { rest } from 'msw';
+import { http, HttpResponse } from 'msw';
 
 import response from '@/__mocks__/response';
 import { apiRoutes } from '@/apiRoutes';
@@ -12,46 +12,48 @@ export const handlers = [
     apiRoutes.categories,
     apiRoutes.couponList,
   ].map(path =>
-    rest.get(`${API_DOMAIN}${path}`, (_, res, ctx) =>
-      res(ctx.status(200), ctx.json(response[path])),
+    http.get(`${API_DOMAIN}${path}`, () =>
+      HttpResponse.json(response[path], {
+        status: 200,
+      }),
     ),
   ),
-  rest.get(`${API_DOMAIN}${apiRoutes.products}`, (req, res, ctx) => {
+  http.get(`${API_DOMAIN}${apiRoutes.products}`, ({ request }) => {
+    const url = new URL(request.url);
     const data = response[apiRoutes.products];
-    const offset = Number(req.url.searchParams.get('offset'));
-    const limit = Number(req.url.searchParams.get('limit'));
+    const offset = Number(url.searchParams.get('offset'));
+    const limit = Number(url.searchParams.get('limit'));
     const products = data.products.filter(
       (_, index) => index >= offset && index < offset + limit,
     );
 
-    return res(
-      ctx.status(200),
-      ctx.json({ products, lastPage: products.length < limit }),
+    return HttpResponse.json(
+      { products, lastPage: products.length < limit },
+      { status: 200 },
     );
   }),
-  rest.get(`${API_DOMAIN}${apiRoutes.profile}`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(null));
+  http.get(`${API_DOMAIN}${apiRoutes.profile}`, () => {
+    return HttpResponse.json(null, { status: 200 });
   }),
-  rest.post(`${API_DOMAIN}${apiRoutes.users}`, (req, res, ctx) => {
-    if (req.body.name === 'FAIL') {
-      return res(ctx.status(500));
+  http.post(`${API_DOMAIN}${apiRoutes.users}`, async ({ request }) => {
+    const body = await request.json();
+
+    if (body.name === 'FAIL') {
+      return HttpResponse.json(null, { status: 500 });
     }
 
-    return res(ctx.status(200));
+    return HttpResponse.json(null, { status: 200 });
   }),
-  rest.post(`${API_DOMAIN}${apiRoutes.login}`, (req, res, ctx) => {
-    if (req.body.email === 'FAIL@gmail.com') {
-      return res(ctx.status(401));
+  http.post(`${API_DOMAIN}${apiRoutes.login}`, async ({ request }) => {
+    const body = await request.json();
+
+    if (body.email === 'FAIL@gmail.com') {
+      return HttpResponse.json(null, { status: 401 });
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json({
-        access_token: 'access_token',
-      }),
-    );
+    return HttpResponse.json({ access_token: 'access_token' }, { status: 200 });
   }),
-  rest.post(`${API_DOMAIN}${apiRoutes.log}`, (_, res, ctx) => {
-    return res(ctx.status(200));
+  http.post(`${API_DOMAIN}${apiRoutes.log}`, () => {
+    return HttpResponse.json(null, { status: 200 });
   }),
 ];

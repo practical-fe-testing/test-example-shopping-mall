@@ -1,5 +1,5 @@
 import { screen, within } from '@testing-library/react';
-import { rest } from 'msw';
+import { http } from 'msw';
 import React from 'react';
 
 import NavigationBar from '@/pages/common/components/NavigationBar';
@@ -36,15 +36,15 @@ describe('로그인이 된 경우', () => {
 
   beforeEach(() => {
     server.use(
-      rest.get('/user', (_, res, ctx) => {
-        return res(
-          ctx.status(200),
-          ctx.json({
+      http.get('/user', () => {
+        return new Response(
+          JSON.stringify({
             email: 'maria@mail.com',
             id: userId,
             name: 'Maria',
             password: '12345',
           }),
+          { status: 200 },
         );
       }),
     );

@@ -1,4 +1,4 @@
-import { rest } from 'msw';
+import { http, HttpResponse } from 'msw';
 import React, { useEffect } from 'react';
 
 import { apiRoutes } from '@/apiRoutes';
@@ -38,13 +38,14 @@ export const LoggedIn = {
 LoggedIn.parameters = {
   msw: {
     handlers: [
-      rest.get(`${API_DOMAIN}${apiRoutes.profile}`, (_, res, ctx) => {
-        return res(
-          ctx.json({
+      http.get(`${API_DOMAIN}${apiRoutes.profile}`, () => {
+        return HttpResponse.json(
+          {
             id: 2,
             email: 'maria@mail.com',
             name: 'Maria',
-          }),
+          },
+          { status: 200 },
         );
       }),
     ],
