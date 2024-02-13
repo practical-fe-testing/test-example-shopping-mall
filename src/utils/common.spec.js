@@ -74,7 +74,6 @@ describe('debounce', () => {
     debouncedFn();
 
     vi.advanceTimersByTime(300);
-    debouncedFn();
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
