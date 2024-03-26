@@ -27,7 +27,7 @@ export const handlers = [
 
     return res(
       ctx.status(200),
-      ctx.json({ products, lastPage: products.length < limit }),
+      ctx.json({ products, lastPage: data.products.length <= offset + limit }),
     );
   }),
   rest.post(`${API_DOMAIN}${apiRoutes.users}`, (req, res, ctx) => {
