@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`pageTitle 스냅샷 테스트(toMatchSnapshot) 1`] = `
+<div>
+  <h2
+    class="MuiTypography-root MuiTypography-h4 css-1lnl64-MuiTypography-root"
+  >
+    상품 리스트
+  </h2>
+  <div
+    style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+  />
+</div>
+`;
