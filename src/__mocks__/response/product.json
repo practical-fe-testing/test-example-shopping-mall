@@ -1,0 +1,19 @@
+{
+  "id": 6,
+  "title": "Handmade Cotton Fish",
+  "price": 809,
+  "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+  "images": [
+    "https://user-images.githubusercontent.com/35371660/230712070-afa23da8-1bda-4cc4-9a59-50a263ee629f.png",
+    "https://user-images.githubusercontent.com/35371660/230711992-01a1a621-cb3d-44a7-b499-20e8d0e1a4bc.png",
+    "https://user-images.githubusercontent.com/35371660/230712056-2c468ef4-45c9-4bad-b379-a9a19d9b79a9.png"
+  ],
+  "creationAt": "2023-04-07T20:39:06.000Z",
+  "updatedAt": "2023-04-07T20:39:06.000Z",
+  "category": {
+    "id": 1,
+    "name": "category1",
+    "creationAt": "2023-04-07T20:39:06.000Z",
+    "updatedAt": "2023-04-07T20:39:06.000Z"
+  }
+}

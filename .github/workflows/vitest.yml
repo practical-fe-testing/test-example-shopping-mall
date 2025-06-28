@@ -1,0 +1,16 @@
+name: 'vitest test'
+on: pull_request
+jobs:
+  Component-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - name: Install dependencies
+        run: npm ci
+      - name: run vitest
+        run: npm run test

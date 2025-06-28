@@ -1,0 +1,22 @@
+{
+  "couponList": [
+    {
+      "type": "price",
+      "value": 5,
+      "name": "가입 기념! $5 할인 쿠폰",
+      "id": 1
+    },
+    {
+      "type": "price",
+      "value": 3,
+      "name": "$3 할인 쿠폰",
+      "id": 2
+    },
+    {
+      "type": "percent",
+      "value": 10,
+      "name": "10% 할인 쿠폰",
+      "id": 3
+    }
+  ]
+}

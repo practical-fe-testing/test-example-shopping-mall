@@ -1,0 +1,23 @@
+[
+  {
+    "creationAt": "2023-03-25T12:00:00.000Z",
+    "id": 1,
+    "image": "https://api.lorem.space/image/fashion",
+    "name": "category1",
+    "updatedAt": "2023-03-25T12:00:00.000Z"
+  },
+  {
+    "creationAt": "2023-03-25T12:00:01.000Z",
+    "id": 2,
+    "image": "https://api.lorem.space/image/fashion",
+    "name": "category2",
+    "updatedAt": "2023-03-25T12:00:01.000Z"
+  },
+  {
+    "creationAt": "2023-03-25T12:00:02.000Z",
+    "id": 3,
+    "image": "https://api.lorem.space/image/fashion",
+    "name": "category3",
+    "updatedAt": "2023-03-25T12:00:02.000Z"
+  }
+]

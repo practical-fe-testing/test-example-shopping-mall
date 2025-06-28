@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Clothes",
+    "creationAt": "2023-04-07T20:39:06.000Z",
+    "updatedAt": "2023-04-07T20:39:06.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Electronics",
+    "creationAt": "2023-04-07T20:39:06.000Z",
+    "updatedAt": "2023-04-07T20:39:06.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Furniture",
+    "creationAt": "2023-04-07T20:39:06.000Z",
+    "updatedAt": "2023-04-07T20:39:06.000Z"
+  },
+  {
+    "id": 4,
+    "name": "Shoes",
+    "creationAt": "2023-04-07T20:39:06.000Z",
+    "updatedAt": "2023-04-07T20:39:06.000Z"
+  },
+  {
+    "id": 5,
+    "name": "Others",
+    "creationAt": "2023-04-07T20:39:06.000Z",
+    "updatedAt": "2023-04-07T20:39:06.000Z"
+  }
+]
