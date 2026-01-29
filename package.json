@@ -48,7 +48,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
-    "@vitest/ui": "^0.33.0",
+    "@vitest/ui": "^1.4.0",
     "concurrently": "8.2.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
@@ -65,7 +65,7 @@
     "storybook-addon-react-router-v6": "1.0.2",
     "vite": "^4.4.4",
     "vite-plugin-eslint": "^1.8.1",
-    "vitest": "^0.33.0"
+    "vitest": "^1.4.0"
   },
   "overrides": {
     "@testing-library/dom": "^9.0.1"
