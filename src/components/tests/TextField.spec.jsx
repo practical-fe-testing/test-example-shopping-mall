@@ -4,6 +4,20 @@ import React from 'react';
 import TextField from '@/components/TextField';
 import render from '@/utils/test/render';
 
+beforeEach(() => {
+  console.log('root - beforeEach');
+});
+beforeAll(() => {
+  console.log('root - beforeAll');
+});
+
+afterEach(() => {
+  console.log('root - afterEach');
+});
+afterAll(() => {
+  console.log('root - afterAll');
+});
+
 it('className prop으로 설정한 css class가 적용된다.', async () => {
   // 1. Arrange - 테스트를 위한 환경 만들기
   // -> className을 지닌 컴포넌트 렌더링
@@ -25,10 +39,13 @@ it('className prop으로 설정한 css class가 적용된다.', async () => {
     'my-class',
   ); //<<Assert
 
-  screen.debug();
+  // screen.debug();
 });
 
 describe('placeholder', () => {
+  beforeEach(() => {
+    console.log('describe - beforeEach');
+  });
   // 기대결과 === 실제결과 -> 성공
   // 기대결과 !== 실제결과 -> 실패
   it('기본 placeholder "텍스트를 입력해 주세요." 가 노출된다.', async () => {
@@ -36,7 +53,7 @@ describe('placeholder', () => {
 
     const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
 
-    screen.debug();
+    // screen.debug();
 
     expect(textInput).toBeInTheDocument();
     //단언(assertion) ->테스트가 통과하기 위한 조건 -> 검증 실행
