@@ -24,4 +24,29 @@ it('className prop으로 설정한 css class가 적용된다.', async () => {
   expect(screen.getByPlaceholderText('텍스트를 입력해 주세요.')).toHaveClass(
     'my-class',
   ); //<<Assert
+
+  screen.debug();
+});
+
+describe('placeholder', () => {
+  // 기대결과 === 실제결과 -> 성공
+  // 기대결과 !== 실제결과 -> 실패
+  it('기본 placeholder "텍스트를 입력해 주세요." 가 노출된다.', async () => {
+    await render(<TextField />);
+
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+
+    screen.debug();
+
+    expect(textInput).toBeInTheDocument();
+    //단언(assertion) ->테스트가 통과하기 위한 조건 -> 검증 실행
+  });
+
+  it('placeholder prop에 따라 placeholder가 변경된다..', async () => {
+    await render(<TextField placeholder="상품명을 입력해주세요." />);
+
+    const textInput = screen.getByPlaceholderText('상품명을 입력해주세요.');
+
+    expect(textInput).toBeInTheDocument();
+  });
 });
