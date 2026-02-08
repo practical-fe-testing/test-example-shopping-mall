@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 
+//모킹한 모듈의 히스토리를 초기화
 afterEach(() => {
   vi.clearAllMocks();
 });
