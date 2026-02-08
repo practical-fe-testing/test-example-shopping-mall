@@ -66,4 +66,54 @@ describe('placeholder', () => {
 
     expect(textInput).toBeInTheDocument();
   });
+
+  it('텍스트를 입력하면 onChange prop으로 등록한 함수가 호출된다.'),
+    async () => {
+      const spy = vi.fn(); // 스파이 함수
+      // 스파이 함수: 테스트 코드에서 특정 함수가 호출되었는지, 함수의 인자로 어떤 것이 넘어왔는지 어떤 값을 반환하는지 등 다양한 값들을 저장한다.
+      const { user } = await render(<TextField onChange={spy} />);
+
+      const textInput = screen.getByPlaceholderText('상품명을 입력해 주세요.');
+
+      await user.type(textInput, 'test');
+
+      expect(spy).toHaveBeenCalledWith('test');
+    };
+
+  it('엔터키를 입력하면 onEnter prop으로 등록한 함수가 호출된다.', async () => {
+    const spy = vi.fn();
+
+    const { user } = await render(<TextField onEnter={spy} />);
+
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+
+    await user.type(textInput, 'test{Enter}');
+
+    expect(spy).toHaveBeenCalledWith('test');
+  });
+
+  it('포커스가 활성화되면 onFocus prop으로 등록한 함수가 호출된다.', async () => {
+    // 포커스 활성화하는 방법은 다양하다.
+    // 탭 키로 인풋 요소로 포커스 이동
+    // 인풋 요소를 클릭했을 때 (가장 보편적이기 때문에 이걸 사용)
+    // textInput.focus()로 직접 발생
+
+    const spy = vi.fn();
+    const { user } = await render(<TextField onFocus={spy} />);
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+    await user.click(textInput);
+    //click과 연관 -> 포커스, 마우스다운, 마우스 업 등...
+
+    expect(spy).toHaveBeenCalled(); //onFocus는 인자가 없어서 호출되었는지만 검증한다.
+  });
+
+  it('포커스가 활성화되면 border 스타일이 추가된다.', async () => {
+    const { user } = await render(<TextField />);
+    const textInput = screen.getByPlaceholderText('텍스트를 입력해 주세요.');
+    await user.click(textInput);
+    expect(textInput).toHaveStyle({
+      borderWidth: '2px',
+      borderColor: 'rgb(25, 118, 210)',
+    });
+  });
 });
